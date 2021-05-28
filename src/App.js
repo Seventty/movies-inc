@@ -1,46 +1,21 @@
 import React,{useState, useEffect} from "react";
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch,useHistory} from "react-router-dom";
+import Home from './components/Home/Home';
+import Auth from "./components/Auth/Auth"
 
-function App() {
 
-  const [requestToken,setRequestToken]= useState('');
-  const API_KEY = '0c0eca362b40cdc4df74e5a1e2c95781';
+  const  App = ()=>{
 
-  
-    async function fetchToken(){
-    
-    const promise = await fetch("https://api.themoviedb.org/3/authentication/token/new?api_key="+API_KEY)
-    const result = await promise.json();
-    const token = result.request_token;
-    setRequestToken(token);
-    
-  }
-
-  
-  useEffect(async ()=>{
-    await fetchToken();
-    console.log(requestToken)
-  
-  },[]);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <Router>
+     <Switch>
+       <Route path='/Home' exact component={Home}></Route>
+       <Route path='/Auth' exact component={Auth}></Route>
+     </Switch>
+   </Router>
   );
 }
 
