@@ -17,7 +17,7 @@ const Auth =()=>{
       
           setRequestToken(token);
       
-          window.location.href ="https://www.themoviedb.org/authenticate/"+token+"?redirect_to=http://localhost:3000/Home";
+          window.location.href ="https://www.themoviedb.org/authenticate/"+token+"?redirect_to=http://localhost:3000/Session";
         
         
         }
@@ -31,10 +31,7 @@ const Auth =()=>{
         
         },[]);
       
-        return(<h1>Auth</h1>
-            
-            
-            )
+        return(null)
 
 }
 
