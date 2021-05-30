@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import config from '../../config';
+import MovieList from '../Movies/MovieList/MovieList';
+import config  from '../../config';
+
 
 const Home = ()=>{
 
-    const server = config[process.env.NODE_ENV].endpoint;
+    
     const api_key= config[process.env.NODE_ENV].api_key;
     const [username,setUserName]=useState('');
     const [sessionId,setSessionId]=useState(localStorage.getItem('session_id'))
@@ -36,6 +38,7 @@ const Home = ()=>{
     return (
     <div>
         <h1>Hello {username} !</h1>
+        <MovieList></MovieList>
     </div>
         
     );
