@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch,useHistory} from "react-router-d
 import Session from './components/Session/Session';
 import Auth from "./components/Auth/Auth";
 import Home from './components/Home/Home';
+import MovieDetails from "./components/Movies/MovieDetails/MoviesDetails";
 
 
   const  App = ()=>{
@@ -16,6 +17,8 @@ import Home from './components/Home/Home';
        <Route path='/Session' exact component={Session}></Route>
        <Route path='/Auth' exact component={Auth}></Route>
        <Route path='/Home' exact component={Home}></Route>
+       <Route path='/Movies/:id' exact component={MovieDetails}></Route>
+
      </Switch>
    </Router>
   );

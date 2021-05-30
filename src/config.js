@@ -1,6 +1,7 @@
 import pkg from '../package.json';
 
-export default{
+
+export default {
     development:{
         endpoint:pkg.proxy,
         api_key:pkg.api_key

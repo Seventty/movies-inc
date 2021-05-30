@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import config from '../../config';
-import MovieList from './MovieList/MovieList';
+import config from '../../../config';
+import ReactStars from 'react-rating-stars-component'
 import "./MoviesDetails.css"
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+
 
 const MovieDetails = ({ match }) => {
 
@@ -14,7 +15,7 @@ const MovieDetails = ({ match }) => {
 
     const history = useHistory();
 
-    const getBacktoMovies = ()=>{
+    const getBacktoMovies = () => {
         history.push('/Home')
     }
 
@@ -51,6 +52,20 @@ const MovieDetails = ({ match }) => {
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item"><b>Release Date: </b>{movie.release_date}</li>
                             <li className="list-group-item"><b>Average Vote: </b>{movie.vote_average}</li>
+                            <li className="list-group-item">
+
+                                <ReactStars
+                                    count={5}
+                                    
+                                    size={24}
+                                    isHalf={true}
+                                    emptyIcon={<i className="far fa-star"></i>}
+                                    halfIcon={<i className="fa fa-star-half-alt"></i>}
+                                    fullIcon={<i className="fa fa-star"></i>}
+                                    activeColor="#ffd700"
+                                />
+
+                            </li>
 
                         </ul>
 
@@ -64,13 +79,14 @@ const MovieDetails = ({ match }) => {
 
                             </ul>
 
-                            
+
 
                         </div>
 
                         <ul className="list-group list-group-flush">
-                                <li className="list-group-item"><button className="btn btn-danger" style={{ "color": "white" }} onClick={()=>{getBacktoMovies()}}>Get back</button></li>
-                            </ul>
+
+                            <li className="list-group-item"><button className="btn btn-danger" style={{ "color": "white" }} onClick={() => { getBacktoMovies() }}>Get back</button></li>
+                        </ul>
 
 
                     </div>
