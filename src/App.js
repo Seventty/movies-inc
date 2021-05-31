@@ -10,14 +10,25 @@ import MovieDetails from "./components/Movies/MovieDetails/MoviesDetails";
 
   const  App = ()=>{
 
+    const [user,setUser]= useState([]);
+    
+
+    const onLoadUser= (user)=>{
+      setUser(user);
+    }
+
+    
 
   return (
    <Router>
      <Switch>
        <Route path='/Session' exact component={Session}></Route>
        <Route path='/Auth' exact component={Auth}></Route>
-       <Route path='/Home' exact component={Home}></Route>
-       <Route path='/Movies/:id' exact component={MovieDetails}></Route>
+       <Route path='/Home'  component={()=><Home onLoadUser={onLoadUser}></Home>}></Route>
+       <Route path='/Movies/:id'  
+              render={({match})=><MovieDetails id={match.params.id} user={user}/>}
+
+              /> 
 
      </Switch>
    </Router>
