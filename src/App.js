@@ -8,6 +8,7 @@ import Home from './components/Home/Home';
 import MovieDetails from "./components/Movies/MovieDetails/MoviesDetails";
 
 
+
   const  App = ()=>{
 
     const [user,setUser]= useState([]);
@@ -17,13 +18,16 @@ import MovieDetails from "./components/Movies/MovieDetails/MoviesDetails";
       setUser(user);
     }
 
+    console.log(user);
     
 
   return (
    <Router>
+   
      <Switch>
        <Route path='/Session' exact component={Session}></Route>
        <Route path='/Auth' exact component={Auth}></Route>
+       <Route path='/' exact component={Auth}></Route>
        <Route path='/Home'  component={()=><Home onLoadUser={onLoadUser}></Home>}></Route>
        <Route path='/Movies/:id'  
               render={({match})=><MovieDetails id={match.params.id} user={user}/>}

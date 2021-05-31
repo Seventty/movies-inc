@@ -60,7 +60,7 @@ if(approved){
     alert("You need to approve permissions to use the app");
     localStorage.removeItem('session_id')
 
-    return <Redirect to="/Auth"></Redirect>
+    return <Redirect to="/"></Redirect>
 }else{
     alert("An error ocurred!")
     return <Redirect to="/Auth"></Redirect>

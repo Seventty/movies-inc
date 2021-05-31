@@ -124,7 +124,7 @@ const MovieDetails = ({id,user}) => {
                             <p className="card-text">{movie.overview}.</p>
                         </div>
                         <ul className="list-group list-group-flush">
-                            <li className="list-group-item"><b>Release Date: </b>{movie.release_date}</li>
+                            <li className="list-group-item"><b>Release Date: </b>{new Date(movie.release_date).getFullYear()}</li>
                             <li className="list-group-item"><b>Average Vote: </b>{movie.vote_average}</li>
                             <li className="list-group-item">
                                 <b>Rate Now</b>
