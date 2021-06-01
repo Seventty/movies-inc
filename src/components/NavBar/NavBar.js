@@ -1,8 +1,8 @@
 //IMPORTANT: THIS COMPONENT WORKS WELL WITH BOOTSTAP 4
 
 
-import { useHistory } from "react-router-dom";
-const NavBar = ({username}) => {
+import { useHistory} from "react-router-dom";
+const NavBar = ({username,onSignOut}) => {
 
   const history = useHistory();
     
@@ -11,7 +11,12 @@ const NavBar = ({username}) => {
         <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a className="navbar-brand" href="/ChatBox">Movies.Inc</a>
         <p className="ml-auto mr-1">{username}</p>
-        <button type="button" id="signout" className="btn btn-danger ml-auto mr-1" onClick={()=>{history.push("/")}}>Sign out</button>
+        <button type="button" id="signout" className="btn btn-danger ml-auto mr-1" onClick={()=>{
+            
+            history.push("/")
+            onSignOut();
+        
+        }}>Sign out</button>
        
       </nav>
         </header>
