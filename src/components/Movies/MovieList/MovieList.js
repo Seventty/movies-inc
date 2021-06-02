@@ -26,29 +26,32 @@ const MovieList = () => {
     }, [])
 
     return (
-        <div className='container'>
-            <div className='row row-cols-1 row-cols-md-3 g-4'>
             
-            {movies.map((movie, i) => {
+        
+           
+            
+            
+            movies.map((movie, i) => {
 
-
+                
                       return(
-                          <div className="col">
-                          <Movie movie={movie} key={i} id={i} />
-                          </div>
+                            <div>
+                            <br></br>
+                             <Movie movie={movie} key={i} id={i} />
+                             <br></br>
+                            </div>
+                                
+                                
+                        
+                           
+                          
                           
                           )
-                    })
+                    }
                     
-                    
-                    
-                    }  
-            </div>
-
-            
-
-        </div>
-
+                )
+                
+               
     );
 
 }

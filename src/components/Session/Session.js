@@ -4,7 +4,7 @@ import {Redirect} from 'react-router-dom';
 import Auth from '../Auth/Auth';
 import Home from '../Home/Home';
 
-const Session = ()=>{
+const Session = ({onLoadUser})=>{
     const API_KEY = '0c0eca362b40cdc4df74e5a1e2c95781';
     const params = new URLSearchParams(window.location.search);
     
@@ -14,12 +14,13 @@ const Session = ()=>{
     const [approved,setApproved] = useState(params.get("approved"));
     const [denied,setDenied] = useState(params.get('denied'))
     const [request_token,setRequestToken] = useState(params.get('request_token'))
+    const [user,setUser] =useState([]);
 
 
   
 
 
-  useEffect(()=>{
+  useEffect(async ()=>{
 
     async function fetchSessionId(){
         const response = await fetch('https://api.themoviedb.org/3/authentication/session/new?api_key='+API_KEY,{
@@ -41,8 +42,12 @@ const Session = ()=>{
         
 
     }
+
+   
+
     
    fetchSessionId()
+    
 
 
   },[])  

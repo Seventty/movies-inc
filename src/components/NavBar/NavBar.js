@@ -21,11 +21,14 @@ const NavBar = ({username,onSignOut}) => {
         <div className="collapse navbar-collapse" id="navbarNav">
 
         <ul className="navbar-nav mr-auto">
+        <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
            
         </ul>
 
         <ul className="navbar-nav">
-        <li className="nav-item"><p className="ml-auto mr-1">{username}</p></li>
+        <li className="nav-item"><a class="nav-link" href="#">{username}</a></li>
         
         <li className="nav-item"> <button type="button" id="signout" className="btn btn-danger" onClick={()=>{
             

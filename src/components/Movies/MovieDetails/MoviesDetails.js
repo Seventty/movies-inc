@@ -113,11 +113,14 @@ const MovieDetails = ({id,user}) => {
 
 
     return (
-        <div className="container">
-            <div className="row align-items-center">
-
-                <div className="col">
-                    <div className="card mb-3" style={{ "width": "18 rem" }}>
+        
+            
+        <div>
+        <br></br>
+        <br></br>
+    
+                
+                    <div className="card" style={{ "width": "18 rem" }}>
                        <img src={"https://www.themoviedb.org/t/p/w600_and_h900_bestv2" + movie.poster_path} className="card-img-top" alt="..."></img>
                         <div className="card-body">
                             <h5 className="card-title">{movie.title}</h5>
@@ -169,8 +172,7 @@ const MovieDetails = ({id,user}) => {
 
                     </div>
                 </div>
-            </div>
-        </div>
+          
 
     );
 
