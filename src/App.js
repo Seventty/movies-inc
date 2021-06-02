@@ -1,6 +1,5 @@
 import React,{useState, useEffect} from "react";
 
-
 import { BrowserRouter as Router, Route, Switch,useHistory} from "react-router-dom";
 import Session from './components/Session/Session';
 import Auth from "./components/Auth/Auth";
@@ -25,16 +24,12 @@ import NavBar from "./components/NavBar/NavBar";
         
       }
 
-      
     }
 
     const onSignOut = ()=>{
       setUser([]);
       setSignedIn=false;
     }
-
-   
-    
 
   return (
    <Router>
