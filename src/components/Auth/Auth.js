@@ -10,7 +10,10 @@ const Auth = () => {
   
         const authenticate = async() => {
           const url = `https://api.themoviedb.org/3/authentication/token/new?api_key=${API_KEY}`;
-          const [response, result] = await Promise.all([HttpHelper().get(url),HttpHelper().get(response.json())]);
+
+          const  response = await HttpHelper().get(url);
+          const result = await response.json();
+          
           const {request_token} = result;
       
           setRequestToken(request_token);
